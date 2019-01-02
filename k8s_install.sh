@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $# != 2 ]]; then 
+if [[ $# != 1 ]]; then 
     echo "$0 k8s_version"
     exit 0
 fi 
