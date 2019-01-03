@@ -5,5 +5,5 @@ kubeadm reset
 
 # clean interface
 ifconfig cni0 down
-ip link delete flannel.1
-brctl delbr cni0
+ip link delete cni0
+brctl delbr flannel.1 
