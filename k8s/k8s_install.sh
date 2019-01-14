@@ -6,6 +6,7 @@ if [[ $# != 1 ]]; then
 fi 
 
 K8S_VERSION=$1
+cd `dirname $0`
 
 # turn off swap, firewall and selinux
 swapoff -a
@@ -16,9 +17,7 @@ systemctl disable firewalld
 setenforce 0
 
 # install docker and start the service
-yum install -y docker
-systemctl enable docker
-systemctl start docker
+./install_docker.sh
 
 # add k8s repo and install it
 if [ ! -f "/etc/yum.repos.d/kubernetes.repo" ]; then
