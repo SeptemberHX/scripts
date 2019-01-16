@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # https://docs.docker.com/install/linux/docker-ce/centos/
-sudo yum remove docker \
+sudo yum remove -y docker \
                   docker-client \
                   docker-client-latest \
                   docker-common \
@@ -20,7 +20,7 @@ sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 
-sudo yum install docker-ce
+sudo yum install -y docker-ce
 
 systemctl enable docker
 systemctl start docker
