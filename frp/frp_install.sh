@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $? < 2 ]; then
-    echo 'Usage: $0 MODE[client/server]'
+if [[ $? < 1 ]]; then
+    echo "Usage: $0 MODE[client/server]"
     exit
 fi
 
@@ -17,11 +17,11 @@ fi
 
 # copy service file to /usr/lib/systemd/system
 cd `dirname $0`
-if [ $2 = 'client' -o $2 = 'c' ]; then
+if [[ $1 = 'client' -o $1 = 'c' ]]; then
     cp ./frpc.service /usr/lib/systemd/system
     systemctl enable frpc.service
     systemctl start frpc.service
-elif [ $2 = 'server' -o $2 = 's' ]; then
+elif [[ $1 = 'server' -o $1 = 's' ]]; then
     cp ./frps.service /usr/lib/systemd/system
     systemctl enable frps.service
     systemctl start frps.service
