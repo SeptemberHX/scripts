@@ -1,5 +1,30 @@
 # scripts
 My daily scripts
 
-* k8s_gxrcio.sh: pull k8s images from docker hub
-* k8s_install.sh: install k8s
+**所有内容均以 CentOS 7 为运行环境**
+
+### 结构
+
+* `basic_utils.sh` ：基础工具安装，这个是**基础，必须安装**
+
+* k8s：Kubernetes 相关内容
+  * `k8s_install.sh` : 安装 k8s，包括 docker，kubeadm
+  * `install_docker.sh` ：独立的 docker 安装脚本，在 `k8s_install.sh` 中会自动执行
+  * `k8s_gxrcio.sh` ：k8s 相关镜像在国内由于网络原因一般无法直接拉取。这个工具从 gxrcio 仓库中拉取镜像
+  * `k8s_reset.sh` ：k8s reset
+* frp：frp 内网穿透工具相关
+  * `frp_install.sh` ：安装 frp 到 `/opt/frp` 中
+  * `frp_ini_generator.sh` ：根据参数自动生成 `/opt/frp/frpc.ini` 配置文件
+* zsh：zsh 相关
+  * `zshrc_auto.sh` ：安装 `oh-my-zsh` 以及其他常用插件
+
+### 使用说明
+
+* 没有说明的均为无参数，直接执行即可
+* `k8s`
+  * `k8s_install.sh` ：需要指定版本参数，注意参数格式。`./k8s_install.sh 1.13.1-0`
+  * `k8s_gxrcio.sh` ：需要指定版本参数，注意参数格式。`./k8s_gxrcio.sh v1.13.1`
+* `frp`
+  * `frp_install.sh` ：需要指定是服务端还是客户端：`./frp_install.sh s|c`
+  * `frp_ini_generator.sh` ：需要指定服务端 IP、端口，以及 tcp 端口映射：`./frp_ini_generator.sh /opt/frp/frpc.ini IP PORT local_port:remote_port local_port:remote_port ...`
+
