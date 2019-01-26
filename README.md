@@ -17,6 +17,8 @@ My daily scripts
   * `frp_ini_generator.sh` ：根据参数自动生成 `/opt/frp/frpc.ini` 配置文件
 * zsh：zsh 相关
   * `zshrc_auto.sh` ：安装 `oh-my-zsh` 以及其他常用插件
+* ssh-tunnel: ssh tunnel 相关
+  * `ssh-tunnel-generator.sh` : 为 ssh 指定端口的隧道建立 service，自动生成的脚本放于 `/opt/ssh-tunnel` 中
 
 ### 使用说明
 
@@ -27,4 +29,6 @@ My daily scripts
 * `frp`
   * `frp_install.sh` ：需要指定是服务端还是客户端：`./frp_install.sh s|c`
   * `frp_ini_generator.sh` ：需要指定服务端 IP、端口，以及 tcp 端口映射：`./frp_ini_generator.sh /opt/frp/frpc.ini IP PORT local_port:remote_port local_port:remote_port ...`
+* `ssh-tunnel`
+  * `ssh-tunnel-generator.sh` : 指定 服务名称， 远端主机名（应配置 ssh 使用 key 连接），本地端口：远程端口：`./ssh-tunnel-generator.sh test hostname 11111:11111`
 
