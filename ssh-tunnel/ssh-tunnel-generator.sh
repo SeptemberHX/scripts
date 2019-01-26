@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $? < 3 ]]; then
+if [[ $# < 3 ]]; then
 	echo "Usage: $0 tunel_name ssh_host_name localport:remotePort"
 	exit 0
 fi
