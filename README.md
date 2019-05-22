@@ -6,7 +6,6 @@ My daily scripts
 ### 结构
 
 * `basic_utils.sh` ：基础工具安装，这个是**基础，必须安装**
-
 * k8s：Kubernetes 相关内容
   * `k8s_install.sh` : 安装 k8s，包括 docker，kubeadm
   * `install_docker.sh` ：独立的 docker 安装脚本，在 `k8s_install.sh` 中会自动执行
@@ -15,6 +14,8 @@ My daily scripts
 * frp：frp 内网穿透工具相关
   * `frp_install.sh` ：安装 frp 到 `/opt/frp` 中
   * `frp_ini_generator.sh` ：根据参数自动生成 `/opt/frp/frpc.ini` 配置文件
+* shadowsocks：服务器代理工具
+  * `ss_install.sh`：安装 shadowsocks，privoxy，proxychains4，成功后，按照提示放置 shadowsocks 配置文件，然后在所有命令前加上 proxychains4 即可使用代理，如：`proxychains4 curl www.google.com`
 * zsh：zsh 相关
   * `zshrc_auto.sh` ：安装 `oh-my-zsh` 以及其他常用插件
 * ssh-tunnel: ssh tunnel 相关
