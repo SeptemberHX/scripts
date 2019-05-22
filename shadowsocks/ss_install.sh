@@ -6,7 +6,9 @@ cd proxychains-ng
 ./configure
 make
 make install
-cp ./config/proxychains.config /etc
+cd ..
+rm -r proxychains-ng
+cp ./config/proxychains.conf /etc
 
 echo " =========>>> Install privoxy <<<========= "
 apt install privoxy
@@ -17,5 +19,6 @@ pip install shadowsocks
 cp ./config/shadowsocks.service /etc/systemd/system
 systemctl enable shadowsocks
 
+echo " =========>>> END <<<========= "
 echo "Put your shadowsocks.json to /etc/shadowsocks/shadowsocks.json"
 echo "Then execute: systemctl start shadowsocks"
