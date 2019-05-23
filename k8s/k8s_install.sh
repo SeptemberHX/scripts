@@ -11,8 +11,8 @@ cd `dirname $0`
 # turn off swap, firewall and selinux
 swapoff -a
 
-systemctl stop firewalld
-systemctl disable firewalld
+# systemctl stop firewalld
+# systemctl disable firewalld
 
 setenforce 0
 
@@ -36,6 +36,7 @@ fi
 sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 
 yum install -y kubelet-$K8S_VERSION.x86_64 kubeadm-$K8S_VERSION.x86_64 kubectl-$K8S_VERSION.x86_64 etcd --disableexcludes=kubernetes
+yum versionlock kubelet kubeadm kubectl
 
 systemctl enable kubelet && systemctl start kubelet
 cat <<EOF >  /etc/sysctl.d/k8s.conf
