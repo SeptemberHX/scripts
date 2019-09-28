@@ -11,6 +11,7 @@ My daily scripts
   * `install_docker.sh` ：独立的 docker 安装脚本，在 `k8s_install.sh` 中会自动执行
   * `k8s_gxrcio.sh` ：k8s 相关镜像在国内由于网络原因一般无法直接拉取。这个工具从 gxrcio 仓库中拉取镜像
   * `k8s_reset.sh` ：k8s reset
+  * `create_restrict_user.sh` : 创建一个只能操作指定命名空间的新用户的 config 文件，默认新建一个和给定用户名一致的命名空间
 * frp：frp 内网穿透工具相关
   * `frp_install.sh` ：安装 frp 到 `/opt/frp` 中
   * `frp_ini_generator.sh` ：根据参数自动生成 `/opt/frp/frpc.ini` 配置文件
@@ -27,6 +28,7 @@ My daily scripts
 * `k8s`
   * `k8s_install.sh` ：需要指定版本参数，注意参数格式。`./k8s_install.sh 1.13.1-0`
   * `k8s_gxrcio.sh` ：需要指定版本参数，注意参数格式。`./k8s_gxrcio.sh v1.13.1`
+  * `create_restrict_user.sh` : `./create_restrict_user.sh user_name k8s_endpoint`
 * `frp`
   * `frp_install.sh` ：需要指定是服务端还是客户端：`./frp_install.sh s|c`
   * `frp_ini_generator.sh` ：需要指定服务端 IP、端口，以及 tcp 端口映射：`./frp_ini_generator.sh /opt/frp/frpc.ini IP PORT local_port:remote_port local_port:remote_port ...`
