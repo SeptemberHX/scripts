@@ -46,6 +46,7 @@ EOF
 
 echo 'KUBELET_EXTRA_ARGS="--runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"' > /etc/sysconfig/kubelet
 echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+systemctl stop firewalld
 systemctl disable firewalld
 # done
 echo "Finished"
