@@ -45,6 +45,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 
 echo 'KUBELET_EXTRA_ARGS="--runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"' > /etc/sysconfig/kubelet
-
+echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+systemctl disable firewalld
 # done
 echo "Finished"
