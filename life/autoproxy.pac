@@ -11,6 +11,7 @@ var rules = [
     ],
     [
         [
+            "onedrive.live.com",
             "aftygh.gov.tw",
             "aide.gov.tw",
             "aliyun.com",
