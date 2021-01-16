@@ -21,7 +21,7 @@ class Request(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     port = 8080
     try:
-        port = int(argv[0])
+        port = int(argv[1])
     except Exception as e:
         pass
 
